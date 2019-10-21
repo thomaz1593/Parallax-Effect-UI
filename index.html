@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parallax Effect</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a href="#" class="logo">NatureComp</a>
+        <nav>
+          <img src="img/menu.svg" alt="menu" />
+        </nav>
+      </header>
+
+      <h1
+        class="lax"
+        data-lax-translate-y="0 0, 400 -400"
+        data-lax-opacity="0 1, 400 0"
+      >
+        Preserve Nature
+      </h1>
+      <div class="line lax" data-lax-opacity="0 1, 200 0"></div>
+    </div>
+
+    <div
+      class="container secondary lax"
+      data-lax-translate-y="0 0, 400 -600"
+      data-lax-opacity="0 0, 300 1"
+    >
+      <h2>Strategic</h2>
+      <p class="subtext">Alliances</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
+        perspiciatis adipisci omnis quis deleniti, veritatis sapiente, pariatur
+        in, quas dolorum explicabo suscipit velit. Quam, pariatur maiores. Esse,
+        animi omnis?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur
+        perspiciatis adipisci omnis quis deleniti, veritatis sapiente, pariatur
+        in, quas dolorum explicabo suscipit velit. Quam, pariatur maiores. Esse,
+        animi omnis?
+      </p>
+    </div>
+
+    <img
+      src="img/mountains2.png"
+      alt="mountains"
+      class="mountains lax"
+      data-lax-translate-y="0 1, 400 -100"
+    />
+    <img
+      src="img/forest2.png"
+      alt="forest"
+      class="forest lax"
+      data-lax-translate-y="0 1, 400 -260"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+
+    <script>
+      window.onload = function() {
+        lax.setup(); // init
+
+        const updateLax = () => {
+          lax.update(window.scrollY);
+          window.requestAnimationFrame(updateLax);
+        };
+
+        window.requestAnimationFrame(updateLax);
+      };
+    </script>
+  </body>
+</html>
